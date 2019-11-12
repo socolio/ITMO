@@ -5,7 +5,7 @@ import ru.oivanov.crypto.alphabet.AlphabetGenerator
 import ru.oivanov.crypto.alphabet.statistics.StatisticsCollector
 
 
-object VigenereCipher {
+object Vigenere {
 
     fun encrypt(text: String, alphabets: Array<Alphabet>) : String {
         val encrypted = StringBuilder()

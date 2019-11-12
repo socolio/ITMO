@@ -1,7 +1,7 @@
 package ru.oivanov.crypto.algorithm
 
-import ru.oivanov.crypto.getBit
-import ru.oivanov.crypto.setBit
+import ru.oivanov.crypto.util.getBit
+import ru.oivanov.crypto.util.setBit
 import ru.oivanov.crypto.tool.FeistelNetwork
 import ru.oivanov.crypto.tool.PBox
 import ru.oivanov.crypto.tool.SBox
@@ -129,7 +129,7 @@ object DES {
             var result = 0UL
             for (i in 0 until 8) {
                 val boxKey = ((expanded shr (i * 6)) and 0b111111U).toUInt()
-                val v = SBOXES[i].use(boxKey).toULong()
+                val v = SBOXES[i].useForDES(boxKey).toULong()
                 result = v or (result shl (i * 4))
             }
             PERMUTATE.use(result)

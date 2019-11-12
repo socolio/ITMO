@@ -1,4 +1,4 @@
-package ru.oivanov.crypto
+package ru.oivanov.crypto.util
 
 import java.nio.ByteBuffer
 
